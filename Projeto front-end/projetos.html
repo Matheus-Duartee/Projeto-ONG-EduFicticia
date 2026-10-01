@@ -5,26 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> ONG EduFicticia - Projetos</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/mascaras.js"></script>
+    
 </head>
 <body>
     <div class="wrapper">
             <aside class="menu">
-                <!-- Checkbox invisivel responsavel pela logica de abrir e fechar o menu -->
-                <input type="checkbox" id="menu-toggle">
-                <label for="menu-toggle" class="menu-icon">☰</label>
-                    <ul class="menu-list">
-                        <li><a href="index.html">inicio</a></li>
-                        <li><a href="projetos.html">Projetos</a></li>
-                        <li><a href="cadastro.html">Cadastre-se</a></li>
-                    </ul>
-            </aside>
+            <!-- Checkbox invisivel responsavel pela logica de abrir e fechar o menu -->
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+                <ul class="menu-list">
+                    <li><a href="index.html">inicio</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="cadastro.html">Cadastre-se</a></li>
+                    <li>
+                        <!-- BOTÃO DE MODO ESCURO -->
+                            <button
+                                type="button"
+                                id="tema-toggle"
+                                class="tema-toggle"
+                                aria-label="Ativar modo escuro"
+                                aria-pressed="false"
+                            >
+                                🌙 Modo escuro
+                            </button>
+                    </li>
+                </ul>
+        </aside>
        
 
-            <div class="main">
-                <div class="header">
+            <main class="main">
+                <header class="header">
                     <h1>Nossos Projetos:</h1>
-                </div>
+                </header>
             
                 <div class="content">
                             <!-- Caixa de Alerta de Aviso -->
@@ -41,8 +53,16 @@
                                     <img src="assets/imagens/imagem1.jpg" width="500px" alt="Voluntário a orientar um aluno num computador durante a aula de informática">
                                     <figcaption><b>Aulas semanais de informática básica</b></figcaption>
                                 </figure>
-                                <p>texto explicativo sobre o projeto</p>
-                                <a href="cadastro.html">Quero participar!</a>
+                                <p>
+                                    O projeto oferece aulas semanais de informática básica
+                                    para jovens em situação de vulnerabilidade social.<br>
+                                    As atividades apresentam conceitos fundamentais de
+                                    computadores, internet e ferramentas digitais,
+                                    contribuindo para o desenvolvimento de habilidades
+                                    importantes para os estudos e para o mercado de trabalho.
+                                </p>
+
+                                <a href="cadastro.html" class="content-button">Quero participar!</a>
                             </div>
                             <div>
                                 <h2>Projeto de oficinas de Leitura</h2>
@@ -53,16 +73,23 @@
                                     <img src="assets/imagens/imagem2.jpg" width="500px" alt="Crianças sentadas em circulo a ouvir a leitura de um livro numa biblioteca comunitária">
                                     <figcaption><b>Sessões de incentivo à leitura infantil</b></figcaption>
                                 </figure>
-                                <p>texto explicativo sobre o projeto</p>
-                                <a href="cadastro.html">Quero participar!</a>
+                                 <p>As oficinas promovem momentos de leitura e interação
+                                    entre crianças, voluntários e educadores.<br> Por meio de
+                                    histórias, rodas de leitura e atividades relacionadas
+                                    aos livros, o projeto busca estimular o interesse pela
+                                    leitura, a criatividade e o desenvolvimento da
+                                    interpretação e da comunicação.</p>
+
+                                <a href="cadastro.html" class="content-button">Quero participar!</a>
                             </div>
                 </div>
                   
-                    <div class="footer">
+                    <footer class="footer">
                            <strong>© Todos os Direitos Reservados</strong> 
-                    </div>
-        </div>  
+                    </footer>
+            </main>  
             
     </div>
 </body>
+<script src="js/mascaras.js"></script>
 </html>
