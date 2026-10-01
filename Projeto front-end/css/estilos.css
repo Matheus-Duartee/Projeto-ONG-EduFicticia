@@ -1,0 +1,369 @@
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =================================
+   GRID PRINCIPAL
+   ================================= */
+
+.wrapper {
+    display: grid;
+
+    grid-template-columns: 260px minmax(12, 1fr);
+
+    grid-template-areas:
+        "menu menu main main main main main main main main main main";
+
+    min-height: 100vh;
+
+    gap: 15px;
+    padding: 15px;
+
+    align-items: stretch;
+}
+
+
+/* =================================
+   MENU LATERAL
+   ================================= */
+
+.menu {
+    grid-area: menu;
+    background-color: #6492d8;
+    padding: 20px;
+    color: #0c0149;
+    border-radius: 8px;
+}
+
+/* Oculta o checkbox real */
+#menu-toggle {
+    display: none;
+}
+
+/* O botão do menu hambúrguer (três barrinhas) - Fica oculto no desktop */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #0c0149;
+    user-select: none;
+}
+
+/* Lista de links padrão do menu */
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu a {
+    display: block;
+    color: #0c0149;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #2b6cb0;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgb(1, 68, 252);
+    border: 1px solid #0c0149;
+}
+/* =================================
+   ÁREA PRINCIPAL
+   ================================= */
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows:
+        auto
+        minmax(0, 1fr)
+        auto;
+    grid-template-areas:
+        "header"
+        "content"
+        "cadastro"
+        "footer";
+
+    min-width: 0;
+    min-height: calc(100vh - 30px);
+    gap: 15px;
+}
+
+
+/* =================================
+   CABEÇALHO
+   ================================= */
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d8d0d4;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-bottom: 2px solid #408cb8;
+}
+
+.header h1 {
+    margin: 0;
+
+    font-size: 24px;
+
+    color: #0a3a72;
+}
+
+
+/* =================================
+   CONTEÚDO
+   ================================= */
+
+.content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    background-color: #4882d8;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    min-width: 0;
+}
+.alert-info{
+    display: block;
+    background-color: #094091;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 6px solid #fcffff;
+    border-right: 6px solid #fcffff;
+    margin-top: 15px;
+    align-self:self-start;
+}
+.alert-info strong{
+    color: #fdffff;
+}
+
+.content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.content a {
+    display: inline-block;
+    background-color: #041938;
+    color: #ffffff;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 15px;
+    align-self: flex-start;
+}
+.content a:hover {
+    background-color: #2b6cb0;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    transform: translateY(-2px);
+
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.content > div {
+    margin-bottom: 2px;
+}
+/* =================================
+   ÁREA DE CADASTRO E BOTÃO
+   ================================= */
+.cadastro-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 2 colunas: labels e inputs */
+    gap: 15px;
+    background-color: #4882d8;
+    padding: 25px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+/* Título ocupando as duas colunas */
+.cadastro-container h2 {
+    grid-column: span 2;
+    color: #041938;
+    margin-bottom: 10px;
+}
+
+/* Estilização refinada do Botão */
+.cadastro-container button {
+    grid-column: span 2; /* Ocupa a largura total do formulário */
+    background-color: #041938; /* Azul corporativo escuro (mesmo do header) */
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+/* Efeito ao passar o mouse por cima do botão */
+.cadastro-container button:hover {
+    background-color: #2b6cb0; /* Azul mais claro para o hover */
+    transform: translateY(-2px); /* Dá um leve efeito de elevação */
+}
+
+/* Ajuste limpo para os campos de input e labels dentro do grid */
+.cadastro-container label {
+    font-weight: 500;
+    color: #041938;
+}
+
+.cadastro-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e1cbcb;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 0.95rem;
+}
+.cadastro-container input.campo-incorreto{
+    border: 2px solid #e20f0f;
+    background-color: #fdf2f2;
+}
+.toast-successo {
+display: none;
+grid-column:span 2;
+background-color: #041938;
+color: #ffffff;
+padding: 15px;
+border-radius: 6px;
+border-left: 6px solid #0ff31a;
+border-right: 6px solid #0ff31a;
+margin-top: 15px;
+}
+.toast-successo strong{
+    color: #0ff31a;
+}
+
+.toast-falha {
+    display: none;
+    grid-column: span 2;
+    background-color: #041938;
+    color: #fdfdfd;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 6px solid #ff0000;
+    border-right: 6px solid #ff0000;
+    margin-top: 15px;
+}
+.toast-falha strong{
+    color: #ff0000;
+}
+
+
+/* =================================
+   RODAPÉ
+   ================================= */
+
+.footer {
+    grid-area: footer;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    background-color: #083579;
+
+    padding: 15px 20px;
+
+    border-radius: 8px;
+}
+
+/* Breakpoints */
+
+/* celulares pequenos*/
+@media (max-width: 480px) {
+    .content-grid {
+        grid-template-columns: 1fr; /* Tudo empilhado em 1 coluna */
+        gap:10px;
+    }
+}
+/* Smarthphones maiores e tablets verticais */
+@media (min-width: 481px) and (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: repeat(6 , 1fr); /* 6 colunas para melhor aproveitamento*/
+    }
+}
+/* Tablets horizontais e laptops compactos */
+@media (min-width:769px) and (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: repeat(12 , 1fr);
+    }
+    .col-exemplo{
+        grid-column: span 6; /* Ocupa metade da largura disponível */
+    }
+}
+/* desktops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .content-grid {
+        grid-template-columns: repeat(12 , 1fr);
+    }
+
+    .col-exemplo{
+        grid-column: span 4; /* Ocupa um terço da largura disponível */
+    }
+}
+/* Desktops grandes / Widescreen */
+@media (min-width: 1441px) {
+    .content-grid {
+        grid-template-columns: repeat(12 , 1fr);
+    }
+
+    .col-exemplo{
+        grid-column: span 3; /* Ocupa um quarto da largura disponível */
+    }
+}
+/* Responsividade para o Menu Hambúrguer em telas menores */
+@media (max-width: 768px) {
+    /* Exibe o ícone do hambúrguer no celular */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Esconde a lista de links por padrão no celular */
+    .menu-list {
+        display: none;
+    }
+
+    /* A MÁGICA DO CHECKBOX: Quando marcado, mostra os links em coluna */
+    #menu-toggle:checked ~ .menu-list {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+}
