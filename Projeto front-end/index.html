@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONG EduFicticia</title>
     <link rel="stylesheet" href="css/estilos.css" >
-    <script src="js/mascaras.js"></script>
+    
 </head>
 <body>
     <div class="wrapper">
@@ -17,13 +17,25 @@
                     <li><a href="index.html">inicio</a></li>
                     <li><a href="projetos.html">Projetos</a></li>
                     <li><a href="cadastro.html">Cadastre-se</a></li>
+                    <li>
+                        <!-- BOTÃO DE MODO ESCURO -->
+                            <button
+                                type="button"
+                                id="tema-toggle"
+                                class="tema-toggle"
+                                aria-label="Ativar modo escuro"
+                                aria-pressed="false"
+                            >
+                                🌙 Modo escuro
+                            </button>
+                    </li>
                 </ul>
         </aside>
 
-        <div class="main">
-            <div class="header">
+        <main class="main">
+            <header class="header">
                 <h1>ONG EduFicticia</h1>
-            </div>
+            </header>
             <div class="content">
                 <h2>Nossa Missão</h2>
                 <ul>
@@ -52,19 +64,44 @@
                             
                             Quer fazer parte dessa transformação?<br>
                            <strong>Junte-se a nós como voluntário, doador ou parceiro e ajude a EduFicticia!</strong><br>
-                            <br><a href="cadastro.html"><p><u>Seja um Voluntário ou Doador</u></p></a>
+                            <br><a href="cadastro.html" class="content-button"><p><u>Seja um Voluntário ou Doador</u></p></a>
 
                           
-                
+                <!-- =============================================
+                            CONTATO
+                     =============================================-->
+
                 <h2>Contato</h2>
-                <p>Email: contato@ongeduficticia.org</p>
-                <p>Telefone: (83) 99999-9999</p>
-                <p>Endereço: Rua da Educação, 123 - Centro</p>
+
+                <address class="contact-info">
+
+                        <p>
+                            <strong>Email:</strong> 
+                            <a href="mailto:contato@ongeduficticia.org">
+                                contato@ongeduficticia.org
+                            </a>
+                        </p>
+
+                        <p>
+                        <strong>Telefone:</strong>
+                        <a href="tel:+5583999999999">
+                            (83) 99999-9999
+                        </a>
+                        </p>
+
+                        <p>
+                            <strong>Endereço:</strong>
+                            Rua da Educação, 123 - Centro
+                        </p>
+
+                 </address>
+
             </div>
-            <div class="footer">
+            <footer class="footer">
                  <strong>© Todos os Direitos Reservados</strong>
-            </div>
-        </div>        
+            </footer>
+        </main>        
     </div>  
 </body>
+<script src="js/mascaras.js"></script>
 </html>
