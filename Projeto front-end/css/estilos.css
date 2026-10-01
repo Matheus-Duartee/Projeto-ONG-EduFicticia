@@ -1,7 +1,7 @@
 html,
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
@@ -71,7 +71,7 @@ body {
     margin: 0;
 }
 
-.menu a {
+.menu a{
     display: block;
     color: #0c0149;
     text-decoration: none;
@@ -88,6 +88,7 @@ body {
     box-shadow: 0 4px 8px rgb(1, 68, 252);
     border: 1px solid #0c0149;
 }
+
 /* =================================
    ÁREA PRINCIPAL
    ================================= */
@@ -128,9 +129,7 @@ body {
 
 .header h1 {
     margin: 0;
-
     font-size: 24px;
-
     color: #0a3a72;
 }
 
@@ -171,30 +170,55 @@ body {
     border-radius: 8px;
 }
 
-.content a {
+/* Botões/links de ação */
+
+.content-button, .tema-toggle{
     display: inline-block;
     background-color: #041938;
-    color: #ffffff;
-    padding: 5px 15px;
+    color: #ffffff !important;
+    padding: 8px 15px;
     text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
     margin-top: 15px;
     align-self: flex-start;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
 }
-.content a:hover {
+
+.content a, .tema-toggle:hover {
     background-color: #2b6cb0;
-
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
     transform: translateY(-2px);
-
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .content > div {
     margin-bottom: 2px;
 }
+
+/* =================================
+   INFORMAÇÕES DE CONTATO
+   ================================= */
+
+.contact-info {
+    font-style: normal;
+    display: inline-block;
+    background-color: #041938;
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 6px ;
+}
+
+.contact-info a {
+    color: #ffffff;
+    background-color:#03337b;
+    padding: 6px 15px;
+    border-radius: 8px ;
+    align-items: start;
+}
+
 /* =================================
    ÁREA DE CADASTRO E BOTÃO
    ================================= */
@@ -366,4 +390,84 @@ margin-top: 15px;
         flex-direction: column;
         margin-top: 10px;
     }
+}
+/* =================================
+   MODO ESCURO (Ativado por Botão e Preferência do Sistema)
+   ================================= */
+
+/* Quando a classe 'tema-escuro' é adicionada ao body pelo JavaScript */
+body.tema-escuro {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+body.tema-escuro .menu {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
+
+body.tema-escuro .menu a {
+    color: #ffffff;
+}
+
+body.tema-escuro .menu a:hover,
+body.tema-escuro .menu a[aria-current="page"] {
+    background-color: #285d91;
+    color: #ffffff;
+}
+
+body.tema-escuro .menu-icon {
+    color: #ffffff;
+}
+
+body.tema-escuro .header {
+    background-color: #242424;
+    border-bottom-color: #408cb8;
+}
+
+body.tema-escuro .header h1 {
+    color: #8ec5ff;
+}
+
+body.tema-escuro .content,
+body.tema-escuro .cadastro-container {
+    background-color: #1d4f85;
+    color: #ffffff;
+}
+
+body.tema-escuro .content-button {
+    background-color: #071f3d;
+}
+
+body.tema-escuro .content-button:hover {
+    background-color: #285d91;
+}
+
+body.tema-escuro .alert-info {
+    background-color: #082d62;
+    color: #ffffff;
+}
+
+body.tema-escuro .cadastro-container h2,
+body.tema-escuro .cadastro-container label {
+    color: #ffffff;
+}
+
+body.tema-escuro .cadastro-container input {
+    background-color: #ffffff;
+    color: #041938;
+    border-color: #8aa4bf;
+}
+
+body.tema-escuro .cadastro-container input:focus {
+    border-color: #ffbf00;
+}
+
+body.tema-escuro .footer {
+    background-color: #061f48;
+    color: #ffffff;
+}
+
+body.tema-escuro .campo-incorreto {
+    border-color: #ff6b6b !important;
 }
